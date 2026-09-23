@@ -18,6 +18,10 @@ export default function Pie() {
           personas son inventados para mostrar cómo se vería una tienda en línea completa, con gestión de catálogo
           y pedidos en tiempo real, para este rubro.
         </p>
+
+        <Link href="/admin/login/" className="mt-6 inline-block text-xs text-tinta/30 hover:text-tinta/60">
+          Equipo
+        </Link>
       </div>
     </footer>
   );
