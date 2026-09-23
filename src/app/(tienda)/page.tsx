@@ -44,16 +44,17 @@ export default function Inicio() {
 
   return (
     <main className="overflow-x-clip">
-      <section className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-24">
+      <div className="relative overflow-hidden bg-gradient-to-br from-turquesa-suave via-hueso to-coral-suave">
         <div
           aria-hidden
           className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-coral/20 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-10 top-1/3 h-80 w-80 rounded-full bg-turquesa/20 blur-3xl"
+          className="pointer-events-none absolute -right-10 top-1/3 h-80 w-80 rounded-full bg-turquesa/25 blur-3xl"
         />
 
+        <section className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-24">
         <div className="aparece relative order-2 md:order-1">
           <span className="inline-flex items-center gap-2 rounded-full bg-turquesa px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white">
             Tulum · Quintana Roo
@@ -93,7 +94,8 @@ export default function Inicio() {
             <p className="text-xs font-semibold text-tinta/60">productos curados</p>
           </div>
         </div>
-      </section>
+        </section>
+      </div>
 
       <div className="overflow-hidden border-y-2 border-tinta bg-tinta py-3">
         <div className="flex w-max animate-[marquesina_28s_linear_infinite] gap-10 whitespace-nowrap">
