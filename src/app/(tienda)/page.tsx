@@ -49,25 +49,14 @@ export default function Inicio() {
 
   return (
     <main className="overflow-x-clip">
-      <div className="relative overflow-hidden bg-gradient-to-br from-turquesa-suave via-hueso to-coral-suave">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-coral/20 blur-3xl"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-10 top-1/3 h-80 w-80 rounded-full bg-turquesa/25 blur-3xl"
-        />
-
+      <div className="relative overflow-hidden bg-coral-suave">
         <section className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-24">
         <div className="aparece relative order-2 md:order-1">
           <span className="inline-flex items-center gap-2 rounded-full bg-turquesa px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white">
             Tulum · Quintana Roo
           </span>
           <h1 className="mt-4 font-display text-4xl leading-tight text-tinta md:text-6xl">
-            Belleza que se siente{" "}
-            <span className="bg-gradient-to-r from-coral to-turquesa bg-clip-text text-transparent">tan viva</span>{" "}
-            como la selva y el mar.
+            Belleza que se siente <span className="text-coral">tan viva</span> como la selva y el mar.
           </h1>
           <p className="mt-5 max-w-md text-lg text-tinta/70">
             Skincare, cabello, maquillaje y fragancias seleccionadas con la misma intención con la que cuidamos la
@@ -180,24 +169,16 @@ export default function Inicio() {
         </section>
       )}
 
-      <section className="relative overflow-hidden bg-tinta">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-coral/30 blur-3xl"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-turquesa/30 blur-3xl"
-        />
-        <div className="relative mx-auto max-w-6xl px-5 py-16 text-center">
-          <h2 className="font-display text-3xl text-hueso md:text-4xl">Hecho para pieles que viven al aire libre</h2>
-          <p className="mx-auto mt-3 max-w-xl text-hueso/70">
+      <section className="bg-turquesa">
+        <div className="mx-auto max-w-6xl px-5 py-16 text-center">
+          <h2 className="font-display text-3xl text-white md:text-4xl">Hecho para pieles que viven al aire libre</h2>
+          <p className="mx-auto mt-3 max-w-xl text-white/80">
             Formulamos y elegimos cada producto pensando en sol, humedad y agua de mar — la rutina real de quien vive
             o visita Tulum.
           </p>
           <Link
             href="/tienda/"
-            className="mt-8 inline-block rounded-full bg-gradient-to-r from-coral to-turquesa px-8 py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5"
+            className="mt-8 inline-block rounded-full bg-coral px-8 py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5"
           >
             Descubrir la tienda
           </Link>
