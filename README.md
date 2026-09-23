@@ -69,7 +69,7 @@ Fotos de [Unsplash](https://unsplash.com) bajo la [licencia de Unsplash](https:/
 | `hero.jpg` | [Denise Chan](https://images.unsplash.com/photo-1671493234884-b1611bcf3e69) |
 | `serum-vitamina-c.jpg` | [Elsa Olofsson](https://unsplash.com/photos/Pm0K9Y3EPUc) |
 | `crema-hidratante-aloe.jpg` | [Birgith Roosipuu](https://images.unsplash.com/photo-1623143445418-40c192fa3d11) |
-| `bruma-facial-agua-coco.jpg` | [Birgith Roosipuu](https://images.unsplash.com/photo-1616750819801-4311f2c43890) |
+| `bruma-facial-agua-coco.jpg` | [Unsplash](https://images.unsplash.com/photo-1597931752949-98c74b5b159f) |
 | `protector-solar-mineral.jpg` | [Unsplash](https://unsplash.com/photos/vX0YZZvZmqI) |
 | `aceite-argan-multiusos.jpg` | [Denise Chan](https://images.unsplash.com/photo-1671493229066-f36e86b35841) |
 | `shampoo-solido-coco.jpg` | [Denise Chan](https://images.unsplash.com/photo-1671493234254-15fc6c91aa87) |
