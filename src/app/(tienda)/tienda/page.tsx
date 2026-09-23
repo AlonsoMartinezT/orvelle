@@ -42,7 +42,7 @@ function Catalogo() {
     <main className="mx-auto max-w-6xl px-5 py-12">
       <h1 className="inline-block font-display text-4xl text-tinta">
         Tienda
-        <span className="mt-1 block h-1.5 w-16 rounded-full bg-gradient-to-r from-coral to-turquesa" />
+        <span className="mt-1 block h-1.5 w-16 rounded-full bg-coral" />
       </h1>
       <p className="mt-3 text-tinta/60">{productos.length} productos · skincare, cabello, maquillaje y fragancias</p>
 

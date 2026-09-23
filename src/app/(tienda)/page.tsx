@@ -169,10 +169,10 @@ export default function Inicio() {
         </section>
       )}
 
-      <section className="bg-turquesa">
+      <section className="bg-turquesa-suave">
         <div className="mx-auto max-w-6xl px-5 py-16 text-center">
-          <h2 className="font-display text-3xl text-white md:text-4xl">Hecho para pieles que viven al aire libre</h2>
-          <p className="mx-auto mt-3 max-w-xl text-white/80">
+          <h2 className="font-display text-3xl text-tinta md:text-4xl">Hecho para pieles que viven al aire libre</h2>
+          <p className="mx-auto mt-3 max-w-xl text-tinta/70">
             Formulamos y elegimos cada producto pensando en sol, humedad y agua de mar — la rutina real de quien vive
             o visita Tulum.
           </p>
