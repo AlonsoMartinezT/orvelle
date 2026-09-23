@@ -10,14 +10,13 @@ export default function Pie() {
         <nav className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
           <Link href="/tienda/" className="hover:text-coral">Tienda</Link>
           <Link href="/contacto/" className="hover:text-coral">Contacto</Link>
-          <Link href="/admin/login/" className="hover:text-coral">Acceso admin</Link>
         </nav>
 
         <p className="mt-6 max-w-2xl rounded-xl border border-linea bg-white/60 p-4 text-xs leading-relaxed text-tinta/60">
           Orvelle es un negocio <strong>ficticio</strong>: proyecto conceptual de portafolio de{" "}
           <a href="https://github.com/AlonsoMartinezT" className="underline">Amtixo</a>. Nombre, productos, precios y
-          personas son inventados para mostrar cómo se vería una tienda en línea completa, con panel de administrador
-          y base de datos real, para este rubro.
+          personas son inventados para mostrar cómo se vería una tienda en línea completa, con gestión de catálogo
+          y pedidos en tiempo real, para este rubro.
         </p>
       </div>
     </footer>
