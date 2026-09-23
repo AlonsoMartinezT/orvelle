@@ -35,44 +35,96 @@ export default function Inicio() {
       .then(({ data }) => setCategorias(data ?? []));
   }, []);
 
+  const CATEGORIA_FONDO: Record<string, string> = {
+    skincare: "bg-turquesa-suave",
+    cabello: "bg-coral-suave",
+    maquillaje: "bg-turquesa-suave",
+    fragancias: "bg-coral-suave",
+  };
+
   return (
-    <main>
-      <section className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-24">
-        <div className="aparece order-2 md:order-1">
-          <p className="font-display text-sm uppercase tracking-[0.3em] text-turquesa">Tulum · Quintana Roo</p>
-          <h1 className="mt-3 font-display text-4xl leading-tight text-tinta md:text-5xl">
-            Belleza que se siente <span className="text-coral">tan viva</span> como la selva y el mar de Tulum.
+    <main className="overflow-x-clip">
+      <section className="relative mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-2 md:items-center md:py-24">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 rounded-full bg-coral/20 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-10 top-1/3 h-80 w-80 rounded-full bg-turquesa/20 blur-3xl"
+        />
+
+        <div className="aparece relative order-2 md:order-1">
+          <span className="inline-flex items-center gap-2 rounded-full bg-turquesa px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white">
+            Tulum · Quintana Roo
+          </span>
+          <h1 className="mt-4 font-display text-4xl leading-tight text-tinta md:text-6xl">
+            Belleza que se siente{" "}
+            <span className="bg-gradient-to-r from-coral to-turquesa bg-clip-text text-transparent">tan viva</span>{" "}
+            como la selva y el mar.
           </h1>
-          <p className="mt-5 max-w-md text-tinta/70">
+          <p className="mt-5 max-w-md text-lg text-tinta/70">
             Skincare, cabello, maquillaje y fragancias seleccionadas con la misma intención con la que cuidamos la
             piel en cabina. Pide en línea, recibe en Tulum.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <Link href="/tienda/" className="rounded-full bg-coral px-7 py-3 font-semibold text-white transition hover:brightness-105">
+            <Link
+              href="/tienda/"
+              className="rounded-full bg-coral px-8 py-3.5 font-bold text-white shadow-lg shadow-coral/30 transition hover:-translate-y-0.5 hover:shadow-xl hover:shadow-coral/40"
+            >
               Ver la tienda
             </Link>
-            <Link href="/contacto/" className="rounded-full border border-tinta/20 px-7 py-3 font-semibold text-tinta transition hover:border-coral hover:text-coral">
+            <Link
+              href="/contacto/"
+              className="rounded-full border-2 border-tinta/15 px-8 py-3.5 font-bold text-tinta transition hover:-translate-y-0.5 hover:border-turquesa hover:text-turquesa"
+            >
               Agenda en cabina
             </Link>
           </div>
         </div>
 
-        <div className="foto-portada order-1 aspect-[4/5] overflow-hidden rounded-3xl md:order-2" style={{ ["--fx" as string]: "60%" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={asset("/img/hero.jpg")} alt="Producto de skincare Orvelle sobre fondo natural" className="h-full w-full object-cover" />
+        <div className="relative order-1 md:order-2">
+          <div className="foto-portada aspect-[4/5] overflow-hidden rounded-[2rem]" style={{ ["--fx" as string]: "60%" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={asset("/img/hero.jpg")} alt="Producto de skincare Orvelle sobre fondo natural" className="h-full w-full object-cover" />
+          </div>
+          <div className="absolute -bottom-5 -left-5 rounded-2xl bg-white px-5 py-3 shadow-xl">
+            <p className="font-display text-2xl text-coral">12+</p>
+            <p className="text-xs font-semibold text-tinta/60">productos curados</p>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-12">
+      <div className="overflow-hidden border-y-2 border-tinta bg-tinta py-3">
+        <div className="flex w-max animate-[marquesina_28s_linear_infinite] gap-10 whitespace-nowrap">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="flex items-center gap-10 pr-10 font-display text-lg uppercase tracking-widest text-hueso">
+              <span>Skincare</span>
+              <span className="text-coral">✦</span>
+              <span>Cabello</span>
+              <span className="text-turquesa">✦</span>
+              <span>Maquillaje</span>
+              <span className="text-coral">✦</span>
+              <span>Fragancias</span>
+              <span className="text-turquesa">✦</span>
+              <span>Envíos a todo México</span>
+              <span className="text-coral">✦</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <section className="mx-auto max-w-6xl px-5 py-14">
+        <h2 className="mb-6 font-display text-3xl text-tinta">Explora por categoría</h2>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {categorias.map((c) => (
             <Link
               key={c.id}
               href={`/tienda/?categoria=${c.slug}`}
-              className="aparece flex flex-col items-center gap-2 rounded-2xl border border-linea bg-white p-6 text-center transition hover:border-coral hover:shadow-md"
+              className={`aparece flex flex-col items-center gap-2 rounded-2xl p-6 text-center transition hover:-translate-y-1 hover:shadow-lg ${CATEGORIA_FONDO[c.slug] ?? "bg-crema"}`}
             >
-              <span className="text-3xl">{CATEGORIA_EMOJI[c.slug] ?? "✨"}</span>
-              <span className="font-display text-lg">{c.nombre}</span>
+              <span className="text-4xl">{CATEGORIA_EMOJI[c.slug] ?? "✨"}</span>
+              <span className="font-display text-lg text-tinta">{c.nombre}</span>
             </Link>
           ))}
         </div>
@@ -82,7 +134,7 @@ export default function Inicio() {
         <section className="mx-auto max-w-6xl px-5 py-12">
           <div className="mb-6 flex items-end justify-between">
             <h2 className="font-display text-3xl text-tinta">Destacados</h2>
-            <Link href="/tienda/" className="text-sm font-semibold text-coral hover:underline">Ver todo →</Link>
+            <Link href="/tienda/" className="text-sm font-bold text-coral hover:underline">Ver todo →</Link>
           </div>
           <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
             {destacados.map((p) => (
@@ -92,13 +144,27 @@ export default function Inicio() {
         </section>
       )}
 
-      <section className="bg-turquesa/10">
-        <div className="mx-auto max-w-6xl px-5 py-14 text-center">
-          <h2 className="font-display text-3xl text-tinta">Hecho para pieles que viven al aire libre</h2>
-          <p className="mx-auto mt-3 max-w-xl text-tinta/70">
+      <section className="relative overflow-hidden bg-tinta">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-coral/30 blur-3xl"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-turquesa/30 blur-3xl"
+        />
+        <div className="relative mx-auto max-w-6xl px-5 py-16 text-center">
+          <h2 className="font-display text-3xl text-hueso md:text-4xl">Hecho para pieles que viven al aire libre</h2>
+          <p className="mx-auto mt-3 max-w-xl text-hueso/70">
             Formulamos y elegimos cada producto pensando en sol, humedad y agua de mar — la rutina real de quien vive
             o visita Tulum.
           </p>
+          <Link
+            href="/tienda/"
+            className="mt-8 inline-block rounded-full bg-gradient-to-r from-coral to-turquesa px-8 py-3.5 font-bold text-white shadow-lg transition hover:-translate-y-0.5"
+          >
+            Descubrir la tienda
+          </Link>
         </div>
       </section>
     </main>

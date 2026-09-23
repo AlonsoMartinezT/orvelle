@@ -40,14 +40,17 @@ function Catalogo() {
 
   return (
     <main className="mx-auto max-w-6xl px-5 py-12">
-      <h1 className="font-display text-4xl text-tinta">Tienda</h1>
-      <p className="mt-2 text-tinta/60">{productos.length} productos · skincare, cabello, maquillaje y fragancias</p>
+      <h1 className="inline-block font-display text-4xl text-tinta">
+        Tienda
+        <span className="mt-1 block h-1.5 w-16 rounded-full bg-gradient-to-r from-coral to-turquesa" />
+      </h1>
+      <p className="mt-3 text-tinta/60">{productos.length} productos · skincare, cabello, maquillaje y fragancias</p>
 
       <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => setCategoria("todas")}
-            className={`rounded-full px-4 py-2 text-sm font-medium transition ${categoria === "todas" ? "bg-coral text-white" : "border border-linea bg-white text-tinta/70 hover:border-coral"}`}
+            className={`rounded-full px-4 py-2 text-sm font-bold transition ${categoria === "todas" ? "bg-coral text-white shadow-md shadow-coral/30" : "border-2 border-linea bg-white text-tinta/70 hover:border-coral"}`}
           >
             Todas
           </button>
@@ -55,7 +58,7 @@ function Catalogo() {
             <button
               key={c.id}
               onClick={() => setCategoria(c.slug)}
-              className={`rounded-full px-4 py-2 text-sm font-medium transition ${categoria === c.slug ? "bg-coral text-white" : "border border-linea bg-white text-tinta/70 hover:border-coral"}`}
+              className={`rounded-full px-4 py-2 text-sm font-bold transition ${categoria === c.slug ? "bg-coral text-white shadow-md shadow-coral/30" : "border-2 border-linea bg-white text-tinta/70 hover:border-coral"}`}
             >
               {c.nombre}
             </button>
