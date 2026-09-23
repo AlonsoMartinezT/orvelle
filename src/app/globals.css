@@ -70,17 +70,6 @@ body {
   }
 }
 
-/* ---------- Franja marquesina decorativa ---------- */
-@keyframes marquesina {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .animate-\[marquesina_28s_linear_infinite\] {
-    animation: none;
-  }
-}
-
 /* ---------- Aparición al hacer scroll (mejora progresiva, decorativa) ---------- */
 @media (prefers-reduced-motion: no-preference) {
   @supports ((animation-timeline: view()) and (animation-range: entry)) {

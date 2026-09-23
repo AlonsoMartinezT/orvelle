@@ -91,25 +91,6 @@ export default function Inicio() {
         </section>
       </div>
 
-      <div className="overflow-hidden bg-coral py-3">
-        <div className="flex w-max animate-[marquesina_28s_linear_infinite] gap-10 whitespace-nowrap">
-          {Array.from({ length: 2 }).map((_, i) => (
-            <div key={i} className="flex items-center gap-10 pr-10 font-display text-lg uppercase tracking-widest text-white">
-              <span>Skincare</span>
-              <span className="text-turquesa-suave">✦</span>
-              <span>Cabello</span>
-              <span className="text-turquesa-suave">✦</span>
-              <span>Maquillaje</span>
-              <span className="text-turquesa-suave">✦</span>
-              <span>Fragancias</span>
-              <span className="text-turquesa-suave">✦</span>
-              <span>Envíos a todo México</span>
-              <span className="text-turquesa-suave">✦</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
       <section className="mx-auto max-w-6xl px-5 py-14">
         <h2 className="mb-6 font-display text-3xl text-tinta">Explora por categoría</h2>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
