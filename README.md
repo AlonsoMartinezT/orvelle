@@ -66,13 +66,13 @@ Fotos de [Unsplash](https://unsplash.com) bajo la [licencia de Unsplash](https:/
 
 | Archivo | Crédito |
 | --- | --- |
-| `hero.jpg` | [Unsplash](https://unsplash.com/photos/photo-1556228720-195a672e8a03) |
+| `hero.jpg` | [Denise Chan](https://images.unsplash.com/photo-1671493234884-b1611bcf3e69) |
 | `serum-vitamina-c.jpg` | [Elsa Olofsson](https://unsplash.com/photos/Pm0K9Y3EPUc) |
-| `crema-hidratante-aloe.jpg` | [Liubov Ilchuk](https://unsplash.com/photos/zN4bP2kmv3c) |
-| `bruma-facial-agua-coco.jpg` | [Unsplash](https://unsplash.com/photos/bHIL4XYmqps) |
+| `crema-hidratante-aloe.jpg` | [Birgith Roosipuu](https://images.unsplash.com/photo-1623143445418-40c192fa3d11) |
+| `bruma-facial-agua-coco.jpg` | [Birgith Roosipuu](https://images.unsplash.com/photo-1616750819801-4311f2c43890) |
 | `protector-solar-mineral.jpg` | [Unsplash](https://unsplash.com/photos/vX0YZZvZmqI) |
-| `aceite-argan-multiusos.jpg` | [Janay Peters](https://unsplash.com/photos/MBJWdTk5rDo) |
-| `shampoo-solido-coco.jpg` | [Unsplash](https://unsplash.com/photos/GpFdYjNn7sE) |
+| `aceite-argan-multiusos.jpg` | [Denise Chan](https://images.unsplash.com/photo-1671493229066-f36e86b35841) |
+| `shampoo-solido-coco.jpg` | [Denise Chan](https://images.unsplash.com/photo-1671493234254-15fc6c91aa87) |
 | `mascarilla-reparadora.jpg` | [Unsplash](https://unsplash.com/photos/RsohkU8mrxU) |
 | `paleta-tonos-arena.jpg` | [Unsplash](https://unsplash.com/photos/pEFWzRyO0Pw) |
 | `base-ligera-tulum.jpg` | [Unsplash](https://unsplash.com/photos/eX-FeKAgPe0) |
