@@ -7,11 +7,23 @@ import { useCarrito } from "@/lib/carrito";
 
 const dinero = (n: number) => `$${n.toLocaleString("es-MX", { minimumFractionDigits: 0 })}`;
 
+const FONDOS = ["bg-turquesa-suave", "bg-coral-suave"];
+const fondoPara = (id: string) => {
+  const suma = id.split("").reduce((acc, c) => acc + c.charCodeAt(0), 0);
+  return FONDOS[suma % FONDOS.length];
+};
+
+const esNuevo = (creadoEn: string) => {
+  const dias = (Date.now() - new Date(creadoEn).getTime()) / (1000 * 60 * 60 * 24);
+  return dias <= 30;
+};
+
 export default function TarjetaProducto({ producto }: { producto: Producto }) {
   const { agregar } = useCarrito();
   const [agregado, setAgregado] = useState(false);
   const enOferta = producto.precio_oferta != null && producto.precio_oferta < producto.precio;
   const agotado = producto.stock <= 0;
+  const nuevo = esNuevo(producto.creado_en);
 
   const agregarRapido = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -27,7 +39,7 @@ export default function TarjetaProducto({ producto }: { producto: Producto }) {
       href={`/tienda/producto/?slug=${producto.slug}`}
       className="group block overflow-hidden rounded-3xl border-2 border-transparent bg-white shadow-sm transition hover:-translate-y-1.5 hover:border-coral/40 hover:shadow-xl hover:shadow-coral/15"
     >
-      <div className="relative aspect-square overflow-hidden bg-crema">
+      <div className={`relative aspect-square overflow-hidden ${fondoPara(producto.id)}`}>
         <div className="foto-fundida absolute inset-0">
           {producto.imagen_url ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -42,6 +54,11 @@ export default function TarjetaProducto({ producto }: { producto: Producto }) {
         </div>
 
         <div className="absolute left-3 top-3 flex flex-col gap-1.5">
+          {nuevo && (
+            <span className="rounded-full bg-tinta px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-sm">
+              Nuevo
+            </span>
+          )}
           {enOferta && (
             <span className="rounded-full bg-coral px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-white shadow-sm">
               Oferta

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { asset } from "@/lib/asset";
 import type { Categoria, Producto } from "@/lib/tipos";
@@ -17,6 +17,11 @@ const CATEGORIA_EMOJI: Record<string, string> = {
 export default function Inicio() {
   const [destacados, setDestacados] = useState<Producto[]>([]);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
+  const carrusel = useRef<HTMLDivElement>(null);
+
+  const desplazar = (direccion: 1 | -1) => {
+    carrusel.current?.scrollBy({ left: direccion * 300, behavior: "smooth" });
+  };
 
   useEffect(() => {
     supabase
@@ -25,7 +30,7 @@ export default function Inicio() {
       .eq("activo", true)
       .eq("destacado", true)
       .order("creado_en", { ascending: false })
-      .limit(4)
+      .limit(8)
       .then(({ data }) => setDestacados(data ?? []));
 
     supabase
@@ -133,16 +138,45 @@ export default function Inicio() {
       </section>
 
       {destacados.length > 0 && (
-        <section className="mx-auto max-w-6xl px-5 py-12">
-          <div className="mb-6 flex items-end justify-between">
-            <h2 className="font-display text-3xl text-tinta">Destacados</h2>
-            <Link href="/tienda/" className="text-sm font-bold text-coral hover:underline">Ver todo →</Link>
+        <section className="py-12">
+          <div className="mx-auto flex max-w-6xl items-end justify-between px-5">
+            <div>
+              <h2 className="font-display text-3xl text-tinta">Destacados</h2>
+              <p className="mt-1 text-sm text-tinta/60">Los favoritos de quienes ya nos conocen.</p>
+            </div>
+            <div className="hidden items-center gap-3 sm:flex">
+              <Link href="/tienda/" className="text-sm font-bold text-coral hover:underline">Ver todo →</Link>
+              <button
+                onClick={() => desplazar(-1)}
+                aria-label="Anterior"
+                className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-tinta/15 text-lg transition hover:border-coral hover:text-coral"
+              >
+                ←
+              </button>
+              <button
+                onClick={() => desplazar(1)}
+                aria-label="Siguiente"
+                className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-tinta/15 text-lg transition hover:border-coral hover:text-coral"
+              >
+                →
+              </button>
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+
+          <div
+            ref={carrusel}
+            className="mt-6 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 [scrollbar-width:none] sm:mx-auto sm:max-w-6xl [&::-webkit-scrollbar]:hidden"
+          >
             {destacados.map((p) => (
-              <TarjetaProducto key={p.id} producto={p} />
+              <div key={p.id} className="w-[70vw] shrink-0 snap-start sm:w-[260px]">
+                <TarjetaProducto producto={p} />
+              </div>
             ))}
           </div>
+
+          <Link href="/tienda/" className="mt-4 block px-5 text-sm font-bold text-coral hover:underline sm:hidden">
+            Ver todo →
+          </Link>
         </section>
       )}
 

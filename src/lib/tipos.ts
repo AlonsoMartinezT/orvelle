@@ -17,6 +17,7 @@ export type Producto = {
   stock: number;
   activo: boolean;
   destacado: boolean;
+  creado_en: string;
 };
 
 export type ItemCarrito = {

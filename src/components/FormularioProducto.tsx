@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import type { Categoria, Producto } from "@/lib/tipos";
 
-const vacio = (): Omit<Producto, "id"> => ({
+const vacio = (): Omit<Producto, "id" | "creado_en"> => ({
   categoria_id: null,
   nombre: "",
   slug: "",
@@ -29,7 +29,7 @@ const aSlug = (s: string) =>
 export default function FormularioProducto({ productoId }: { productoId?: string }) {
   const router = useRouter();
   const [categorias, setCategorias] = useState<Categoria[]>([]);
-  const [form, setForm] = useState<Omit<Producto, "id">>(vacio());
+  const [form, setForm] = useState<Omit<Producto, "id" | "creado_en">>(vacio());
   const [subiendoImagen, setSubiendoImagen] = useState(false);
   const [guardando, setGuardando] = useState(false);
   const [error, setError] = useState("");

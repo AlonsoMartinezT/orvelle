@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { ProveedorCarrito } from "@/lib/carrito";
+import BarraPromo from "@/components/BarraPromo";
 import Encabezado from "@/components/Encabezado";
 import Pie from "@/components/Pie";
 
@@ -12,6 +13,7 @@ export default function LayoutTienda({ children }: { children: ReactNode }) {
       >
         Saltar al contenido
       </a>
+      <BarraPromo />
       <Encabezado />
       <div id="contenido" className="flex-1">
         {children}
