@@ -42,6 +42,9 @@ function Dashboard() {
         <div className="rounded-2xl border border-linea bg-white p-6">
           <p className="text-sm text-tinta/50">Pedidos recientes</p>
           <p className="mt-1 font-display text-4xl text-turquesa">{pedidos.length}</p>
+          <Link href="/admin/pedidos/" className="mt-3 inline-block text-sm font-semibold text-turquesa hover:underline">
+            Ver todos los pedidos →
+          </Link>
         </div>
       </div>
 

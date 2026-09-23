@@ -13,6 +13,7 @@ export default function NavAdmin() {
         <nav className="flex gap-6 font-medium text-sm">
           <Link href="/admin/" className="hover:text-coral">Panel</Link>
           <Link href="/admin/productos/" className="hover:text-coral">Productos</Link>
+          <Link href="/admin/pedidos/" className="hover:text-coral">Pedidos</Link>
         </nav>
         <button
           onClick={async () => {

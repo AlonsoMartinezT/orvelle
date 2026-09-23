@@ -42,8 +42,14 @@ export default function Checkout() {
     );
   }
 
-  const enviarPedido = async (e: React.FormEvent) => {
+  const enviarPedido = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!e.currentTarget.checkValidity()) {
+      e.currentTarget.reportValidity();
+      return;
+    }
+
     setError("");
     setEnviando(true);
 
